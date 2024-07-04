@@ -4,8 +4,8 @@ import { Fraction } from "fractional";
 class RecipeView {
 	#parentElement = document.querySelector(".recipe");
 	#data;
-  #errorMessage = 'We couldnt find recipe. Please try another one.' 
-  #message = '' 
+	#errorMessage = "We couldnt find recipe. Please try another one.";
+	#message = "";
 
 	render(data) {
 		this.#data = data;
@@ -136,11 +136,11 @@ class RecipeView {
             <p>${this.#errorMessage}</p>
           </div>`;
 
-    this.#clear();
-    this.#parentElement.insertAdjacentHTML("afterbegin", markup);
+		this.#clear();
+		this.#parentElement.insertAdjacentHTML("afterbegin", markup);
 	}
 
-  renderMessage() {
+	renderMessage() {
 		const markup = `<div class="message">
             <div>
               <svg>
@@ -150,8 +150,8 @@ class RecipeView {
             <p>${this.#message}</p>
           </div>`;
 
-    this.#clear();
-    this.#parentElement.insertAdjacentHTML("afterbegin", markup);
+		this.#clear();
+		this.#parentElement.insertAdjacentHTML("afterbegin", markup);
 	}
 }
 
