@@ -19,8 +19,9 @@ const controlRecipes = async function () {
 		if (!id) return;
 		recipeView.renderSpinner();
 
+		bookmarksView.update(model.state.bookmarks);
+
 		resultsView.update(model.getSearchResultsPage());
-		bookmarksView.update(model.state.bookmarks)
 
 		await model.loadRecipe(id);
 
@@ -60,14 +61,18 @@ const controlServings = function (newServings) {
 
 const controlAddBookmark = function () {
 	if (!model.state.recipe.bookmarked) {
-		model.addBookmark(model.state.recipe)
+		model.addBookmark(model.state.recipe);
 	} else if (model.state.recipe.bookmarked) {
-		model.deleteBookmark(model.state.recipe.id)
-	};
+		model.deleteBookmark(model.state.recipe.id);
+	}
 
 	recipeView.update(model.state.recipe);
 
-	bookmarksView.render(model.state.bookmarks)
+	bookmarksView.render(model.state.bookmarks);
+};
+
+const controlBookMarks = function () {
+	bookmarksView.render(model.state.bookmarks);
 };
 
 const init = function () {
@@ -75,7 +80,8 @@ const init = function () {
 	recipeView.addHandlerUpdateServings(controlServings);
 	searchView.addHandlerSearch(controlSearchResults);
 	paginationView.addHandlerClick(controlPagination);
-	recipeView.addHandlerAddBookMark(controlAddBookmark)
+	recipeView.addHandlerAddBookMark(controlAddBookmark);
+	bookmarksView.addHandlerRender(controlBookMarks);
 };
 
 init();
