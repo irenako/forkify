@@ -31,6 +31,8 @@ class AddRecipeView extends View {
 		this._overlay.addEventListener("click", this.toggleWindow.bind(this));
 	}
 
+	// TODO: add validation to the form
+	// TODO: add separate fields for unit, wight, ing
 	addHandlerUpload(handler) {
 		this._parentElement.addEventListener("submit", function (e) {
 			e.preventDefault();

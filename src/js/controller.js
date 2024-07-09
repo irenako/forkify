@@ -9,10 +9,9 @@ import bookmarksView from "./views/bookmarksView";
 import addRecipeView from "./views/addRecipeView";
 import { MODAL_CLOSE_SEC } from "./config";
 
-///////////////////////////////////////
-// if (module.hot) {
-// 	module.hot.accept();
-// }
+//TODO: add button on recipe to add ingrediens to a shopping list
+//TODO: weekly meal planning feature 
+//TODO: get nutrition data on each from spoonacular API
 
 const controlRecipes = async function () {
 	try {

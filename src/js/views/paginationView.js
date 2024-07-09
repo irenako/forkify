@@ -6,6 +6,7 @@ class PaginationView extends View {
 	_errorMessage = "No recipes found. Please try again.";
 	_message = "";
 
+    // TODO: add number of pages between the pagination btns
 	_generateMarkup() {
 		const curPage = this._data.page;
 		const numPages = Math.ceil(this._data.results.length / this._data.resultsPerPage);
